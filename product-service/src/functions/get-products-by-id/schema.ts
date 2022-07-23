@@ -1,3 +1,6 @@
 export default {
-  type: "object"
+  type: "object",
+  pathParameters: {
+    productId: "string"
+  }
 } as const;

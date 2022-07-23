@@ -7,7 +7,7 @@ import ProductsService from 'src/products-service';
 import schema from './schema';
 
 const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
-  const { productId } = event.queryStringParameters;
+  const { productId } = event.pathParameters;
   try {
     const product = await ProductsService.getProductById(productId);
     return formatJSONResponse<Product>(product);

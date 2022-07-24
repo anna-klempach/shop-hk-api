@@ -1,3 +1,54 @@
+## API links
+
+[getProductsList](https://ihcbvv3idd.execute-api.us-east-1.amazonaws.com/dev/products)
+[getProductsById success](https://ihcbvv3idd.execute-api.us-east-1.amazonaws.com/dev/products/d55042c3-297e-4b70-8561-9b42126580a8)
+[getProductsById not found error](https://ihcbvv3idd.execute-api.us-east-1.amazonaws.com/dev/products/d55042c3-297e-4b70-8561-9b4212658033)
+[getProductsById invalid input for id error](https://ihcbvv3idd.execute-api.us-east-1.amazonaws.com/dev/products/123)
+[createProduct](https://ihcbvv3idd.execute-api.us-east-1.amazonaws.com/dev/products):
+
+Method: POST
+
+Request schema:
+
+```javascript
+{
+    type: 'object',
+    properties: {
+        body: {
+        type: 'object',
+        properties: {
+            title: { type: 'string' },
+            description: { type: 'string' },
+            count: { type: 'number', minimum: 0 },
+            price: { type: 'number', minimum: 0 }
+        },
+        required: ['title']
+        }
+    }
+}
+```
+
+request sample object:
+
+```json
+{
+    "body": {
+        "title": "Local test title",
+        "description": "Local test description",
+        "count": 15,
+        "price": 100
+    },
+    "headers": {
+        "Content-type": "application/json"
+    }
+}
+```
+Please, remember to add `"Content-type": "application/json"` to the request, otherwise the body will not be parsed properly.
+
+## UI link
+
+[UI is deployed here](https://d3r1498wmce1xx.cloudfront.net/)
+
 # Serverless - AWS Node.js Typescript
 
 This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).

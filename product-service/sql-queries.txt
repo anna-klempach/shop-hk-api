@@ -1,0 +1,32 @@
+create table products (
+	id uuid primary key default uuid_generate_v4(),
+	title text NOT NULL,
+	description text,
+	price integer
+)
+
+create table stocks (
+	product_id uuid,
+	count integer,
+	foreign key ("product_id") references "products" ("id")
+)
+
+insert into products (title, description, price) values
+('Spiderman Suit (blue)', 'Spiderman Suit in color blue. Can throw web and stick to the walls. Hypoallergenic.', 249),
+('Spiderman Suit (black)', 'Spiderman Suit in color black. Can throw web and stick to the walls. Hypoallergenic.', 269),
+('Captain America Shield', 'Shield made from Vibranium. Provides high protection from standard weapons, energy-based weapons powered by the Tesseract.', 159),
+('Mjölnir', 'The hammer of the thunder god Thor. Can be used as a devastating weapon and as a divine instrument to provide blessings.', 259),
+('Mark L', 'Known as the Bleeding Edge armor. Has rocket thrusters that allows to travel in deep space. Has the ability to form around the owner using nanotechnology. Can regenerate itself if it sustains damage.', 1099),
+('Hawkeyes Bow and Quiver', 'A pair of specialized tools used by former S.H.I.E.L.D. agent and Avenger, Hawkeye. Serving as his primary weapons, Hawkeye carries a unique, collapsible recurve bow along with a mechanized quiver that stores and deploys his trick arrows.', 99),
+('Cloak of Levitation', 'A magical relic that is able to move and fly on its own power, enabling its user to levitate and hover in the air.', 119)
+
+insert into stocks (product_id, count) values
+('d55042c3-297e-4b70-8561-9b42126580a8',3),
+('069d7a96-5e0f-4c93-b393-1e3029696282', 6),
+('2a04eb20-b480-4879-9a13-b1c265758f11',8),
+('670937fe-b754-4067-9d73-a875982df0d4',5),
+('e84e2bd3-32cd-4ec7-a56e-2a28736453db',7),
+('dfad95c3-247d-420a-9c30-4efa434a1f66',3),
+('76183d23-53a2-47c1-9164-c35a38a743ff',6)
+
+create extension if not exists "uuid-ossp";

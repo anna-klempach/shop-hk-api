@@ -45,6 +45,10 @@ request sample object:
 ```
 Please, remember to add `"Content-type": "application/json"` to the request, otherwise the body will not be parsed properly.
 
+## UI link
+
+[UI is deployed here](https://d3r1498wmce1xx.cloudfront.net/)
+
 # Serverless - AWS Node.js Typescript
 
 This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).

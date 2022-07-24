@@ -1,9 +1,11 @@
 export type Product = {
-  count: number,
   description: string,
-  id: string,
   price: number,
-  title: string
+  title: string,
+  count: number
+}
+export type ProductFull = Product & {
+  id: string
 };
 
 export type ErrorInfo = {

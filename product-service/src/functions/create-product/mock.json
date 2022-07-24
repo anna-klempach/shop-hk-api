@@ -1,0 +1,11 @@
+{
+  "body": {
+    "title": "Local test title",
+    "description": "Local test description",
+    "count": 15,
+    "price": 100
+  },
+  "headers": {
+    "Content-type": "application/json"
+  }
+}

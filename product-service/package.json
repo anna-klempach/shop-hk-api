@@ -6,14 +6,19 @@
   "scripts": {
     "invoke:getProductsById": "serverless invoke local --function getProductsById --path ./src/functions/get-products-by-id/mock.json",
     "invoke:getProductsList": "serverless invoke local --function getProductsList",
-    "deploy": "sls deploy"
+    "invoke:createProduct": "serverless invoke local --function createProduct --path ./src/functions/create-product/mock.json",
+    "deploy": "sls deploy",
+    "postinstall": "node fix.js"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
     "@middy/core": "^2.5.3",
-    "@middy/http-json-body-parser": "^2.5.3"
+    "@middy/http-json-body-parser": "^2.5.3",
+    "@middy/validator": "^3.1.0",
+    "@types/pg": "^8.6.5",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",
